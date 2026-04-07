@@ -1,0 +1,18 @@
+// ============================================
+//  factorial.bl — Recursive Factorial
+// ============================================
+//  Recursion ka example: n! = n * (n-1)!
+
+kaam factorial(n) {
+    agar (n <= 1) {
+        lautao 1;
+    }
+    lautao n * factorial(n - 1);
+}
+
+// Test karo 1 se 10 tak
+rakho i = 1;
+jabtak (i <= 10) {
+    likho(i + "! = " + factorial(i));
+    i = i + 1;
+}

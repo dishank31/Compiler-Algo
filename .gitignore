@@ -1,3 +1,17 @@
-build
+build/
 cmake-build*
-.idea
+.idea/
+.vs/
+.vscode/
+
+# Compiled objects
+*.o
+*.obj
+*.exe
+
+# Error logs
+compile_errors.txt
+
+# OS files
+Thumbs.db
+.DS_Store

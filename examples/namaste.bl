@@ -1,0 +1,13 @@
+// ============================================
+//  namaste.bl — Hello World in BharatLang
+// ============================================
+//  Sabse pehla program! Duniya ko namaste bolo.
+
+likho("🇮🇳 Namaste, Duniya!");
+likho("Yeh BharatLang hai — Hinglish mein coding!");
+
+// Variable banana aur use karna
+rakho naam = "Bharat";
+rakho saal = 2026;
+
+likho(naam + " mein aapka swagat hai, saal " + saal + " mein!");

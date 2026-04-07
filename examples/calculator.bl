@@ -1,0 +1,27 @@
+// ============================================
+//  calculator.bl — Simple Calculator
+// ============================================
+//  User se numbers aur operator lo, result do.
+
+likho("🧮 BharatLang Calculator");
+likho("========================");
+
+rakho num1 = padho("Pehla number daalo: ");
+rakho operator = padho("Operator daalo (+, -, *, /): ");
+rakho num2 = padho("Doosra number daalo: ");
+
+agar (operator == "+") {
+    likho("Result: " + num1 + " + " + num2 + " = " + (num1 + num2));
+} warna_agar (operator == "-") {
+    likho("Result: " + num1 + " - " + num2 + " = " + (num1 - num2));
+} warna_agar (operator == "*") {
+    likho("Result: " + num1 + " * " + num2 + " = " + (num1 * num2));
+} warna_agar (operator == "/") {
+    agar (num2 == 0) {
+        likho("❌ Zero se divide nahi kar sakte!");
+    } warna {
+        likho("Result: " + num1 + " / " + num2 + " = " + (num1 / num2));
+    }
+} warna {
+    likho("❌ Galat operator! Sirf +, -, *, / use karo.");
+}

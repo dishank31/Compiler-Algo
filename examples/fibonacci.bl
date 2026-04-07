@@ -1,0 +1,21 @@
+// ============================================
+//  fibonacci.bl — Fibonacci Series
+// ============================================
+//  0, 1, 1, 2, 3, 5, 8, 13, 21, ...
+
+kaam fibonacci(n) {
+    agar (n <= 0) {
+        lautao 0;
+    }
+    agar (n == 1) {
+        lautao 1;
+    }
+    lautao fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+likho("📊 Fibonacci Series (0 se 15 tak):");
+likho("─────────────────────────────────");
+
+har (rakho i = 0; i <= 15; i = i + 1) {
+    likho("fibonacci(" + i + ") = " + fibonacci(i));
+}

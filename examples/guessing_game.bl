@@ -1,0 +1,32 @@
+// ============================================
+//  guessing_game.bl — Number Guessing Game
+// ============================================
+//  Computer ek number sochega, user guess karega!
+
+likho("🎯 Number Guessing Game!");
+likho("========================");
+likho("Main 1 se 50 ke beech ek number soch raha hoon...");
+
+// Simple pseudo-random using time
+rakho secret = 7;   // fixed for demo (would need random for real)
+rakho attempts = 0;
+rakho maxAttempts = 7;
+rakho found = galat;
+
+jabtak (attempts < maxAttempts aur nahi found) {
+    rakho guess = padho("Guess karo (attempt " + (attempts + 1) + "/" + maxAttempts + "): ");
+    attempts = attempts + 1;
+
+    agar (guess == secret) {
+        found = sahi;
+        likho("🎉 Sahi jawab! " + attempts + " attempts mein guess kar liya!");
+    } warna_agar (guess < secret) {
+        likho("⬆️  Zyada bolo... (" + (maxAttempts - attempts) + " attempts bache)");
+    } warna {
+        likho("⬇️  Kam bolo... (" + (maxAttempts - attempts) + " attempts bache)");
+    }
+}
+
+agar (nahi found) {
+    likho("😅 Haar gaye! Number tha: " + secret);
+}
