@@ -12,6 +12,9 @@ cmake-build*
 # Error logs
 compile_errors.txt
 
+# Docs (local only)
+Interview_Guide.md
+
 # OS files
 Thumbs.db
 .DS_Store
