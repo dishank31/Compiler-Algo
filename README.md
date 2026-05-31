@@ -98,31 +98,48 @@ likho("5 ka factorial: " + factorial(5));
 You will need a C++20 compatible compiler (like GCC 10+ via MSYS2 or MSVC 2019+) and CMake.
 
 ### 1. Using CMake
+On Windows with MSYS2 UCRT64, make sure the UCRT64 compiler/runtime is first on `PATH`. This project was verified with GCC 15.2.0 from `C:\msys64\ucrt64\bin`.
+
+```powershell
+$env:PATH = "C:\msys64\ucrt64\bin;" + $env:PATH
+$env:CXX = "C:\msys64\ucrt64\bin\g++.exe"
+cmake -B build -S . -G Ninja
+cmake --build build
+```
+
+The CMake build writes the executable to `build/bin/bharatlang.exe`.
+
+On Linux/macOS or a shell where the correct compiler is already on `PATH`:
+
 ```bash
 cmake -B build -S .
 cmake --build build
 ```
-*(Alternative: If on MSYS2 Mingw64, you can directly compile using g++:)*
-```bash
-g++ -std=c++20 -Wall -Isrc -o build/bharatlang.exe src/main.cpp src/Lexer.cpp src/Parser.cpp src/Interpreter.cpp src/IRGenerator.cpp
+
+Alternative direct compile:
+
+```powershell
+$env:PATH = "C:\msys64\ucrt64\bin;" + $env:PATH
+New-Item -ItemType Directory -Force build | Out-Null
+g++ -std=c++20 -Wall -Wextra -Wpedantic -Isrc -o build\bharatlang.exe src\main.cpp src\Lexer.cpp src\Parser.cpp src\Interpreter.cpp src\IRGenerator.cpp
 ```
 
 ### 2. Running
 **Mode 1: Interactive Shell (REPL)**
-```bash
-./build/bharatlang.exe
+```powershell
+.\build\bin\bharatlang.exe
 भारत>>> 
 ```
 
 **Mode 2: Running a Script**
-```bash
-./build/bharatlang.exe examples/namaste.bl
+```powershell
+.\build\bin\bharatlang.exe examples\namaste.bl
 ```
 
 **Mode 3: Debug Tools**
-```bash
-./build/bharatlang.exe examples/namaste.bl --tokens   # View raw tokens from Lexer
-./build/bharatlang.exe examples/namaste.bl --ir       # View generated Three-Address Code
+```powershell
+.\build\bin\bharatlang.exe examples\namaste.bl --tokens   # View raw tokens from Lexer
+.\build\bin\bharatlang.exe examples\namaste.bl --ir       # View generated Three-Address Code
 ```
 
 ---
