@@ -1,18 +1,17 @@
 build/
-cmake-build*
+cmake-build*/
+build-*/
 .idea/
 .vs/
 .vscode/
 
-# Compiled objects
+# Compiled objects and binaries
 *.o
 *.obj
 *.exe
 
-# Error logs
+# Local generated/debug files
 compile_errors.txt
-
-# Docs (local only)
 Interview_Guide.md
 
 # OS files
