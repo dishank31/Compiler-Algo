@@ -30,6 +30,10 @@
 #include <string>
 #include <vector>
 
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
 // ── ANSI Color Helpers ─────────────────────────────────────
 const std::string RESET   = "\033[0m";
 const std::string BOLD    = "\033[1m";
@@ -212,6 +216,11 @@ void runREPL() {
 //  MAIN
 // ═══════════════════════════════════════════════════════════
 int main(int argc, char* argv[]) {
+#ifdef _WIN32
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+#endif
+
     // No arguments → REPL mode
     if (argc == 1) {
         runREPL();
